@@ -1,7 +1,7 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
-
+const flash = require('connect-flash');
 const app = express();
 
 
@@ -24,6 +24,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, console.log(`Server started on port ${PORT}`));

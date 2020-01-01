@@ -26,7 +26,7 @@ router.post('/register', (req, res) => {
     }
 
     //Check pass length
-    if (password < 6) {
+    if (password.length < 6) {
         errors.push({ msg: 'Şifre 6 karakterden kısa olmamalıdır.' });
     }
 
@@ -40,7 +40,7 @@ router.post('/register', (req, res) => {
         });
     } else {
         //Validation passed
-        User.findOne({ email: email })
+        res.send('pass');
     }
 });
 
